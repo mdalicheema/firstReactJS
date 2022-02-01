@@ -8,7 +8,7 @@ console.log(state);
 
 const [count, setCount] = useState(0);
 
-let timeH = new Date().getHours();
+let timeH = new Date().toLocaleTimeString();
 
 const IncNum = () => {
   setCount(count + 1);
