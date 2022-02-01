@@ -9,6 +9,7 @@ console.log(state);
 const [count, setCount] = useState(0);
 
 let timeH = new Date().toLocaleTimeString();
+let timeH1 = new Date().toLocaleTimeString();
 
 const IncNum = () => {
   setCount(count + 1);
