@@ -2,28 +2,146 @@ import React, { useState } from 'react';
 
 
 
+
+//spread operators or three dots (...) for arrays and objects
+// const App  = () => {
+
+//   //arrays  
+//   const fullName = ['tahir', 'saleem'];
+//   const biodata = [1, ...fullName, 26, 'male'];
+//   console.log(fullName);
+//   console.log(biodata);
+  
+//   const shootinggames = ['try to shoot', 'they are going to dead'];
+//   const flygames = ['how to fly', 'bloons have gone through the sky'];
+//   const games = [...shootinggames, ...flygames];
+//   console.log(games);
+  
+//   // objects
+//   const battle = {
+//     name: 'zarb-e-azab',
+//     location: 'nothern areas'
+//   };
+  
+//   const country = {
+//     count: 'pak',
+//     ...battle,
+//     xcode: '0092',
+//   };
+
+//   console.log(country);
+
+//   return(
+//     <>
+//       <h1>Wohooooooooo!!!!!!!!!!!!! ♐  🎿</h1>
+//     </>
+//   );
+// }
+
+
+//complex form vs Login page
 const App = () => {
   
-  const [name, setName] = useState('');
+  const [fullName, setName] = useState({
+    fname: "",
+    lname: "",
+    email: "",
+    phone: "",
+  });
   
   const sendData = (event) => {
     // console.log(event.target.value);
-    setName(event.target.value);
+    // console.log(event.target.name);
+    // console.log(event.target.placeholder);
+
+    // const value = event.target.value;
+    // const name = event.target.name;
+
+     const {name, value} = event.target;
+
+    setName((preValue) => {
+      // console.log(preValue);
+      return {
+        ...preValue,
+        [name] : value,
+      };
+      // if(name === 'fName'){
+      //   return {
+      //     fname: value,
+      //     lname: preValue.lname,
+      //     email: preValue.email,
+      //     phone: preValue.phone,
+      //   };
+      // }else if(name === 'lName'){
+      //   return{
+      //     fname: preValue.fname,
+      //     lname: value,
+      //     email: preValue.email,
+      //     phone: preValue.phone,
+      //   }
+      // }else if(name === 'eMail'){
+      //   return{
+      //     fname: preValue.fname,
+      //     lname: preValue.lname,
+      //     email: value,
+      //     phone: preValue.phone,
+      //   }
+      // }else{
+      //   return{
+      //     fname: preValue.fname,
+      //     lname: preValue.lname,
+      //     email: preValue.email,
+      //     phone: value,
+      //   }
+      // }
+    });
+
   }
   
   const setData = (event) => {
     // console.log(event.target.value);
     event.preventDefault();
-    setFirstName(name);
+    alert('form submited');
   }
   
   return (
     <>
         <div>
           <form onSubmit={setData}>
-            <h1>Hello</h1>
-            <input type="text" name='fName' placeholder='Enter first name' onChange={sendData} value={fname} />       
-            <input type="text" name= 'lName' placeholder='Enter last name' onChange={sendData} value={fname} />       
+            <h1>Hello, {fullName.fname} {fullName.lname} </h1>
+            <h3>{fullName.email}</h3>
+            <p>{fullName.phone}</p>
+            <p>{fullName.qua}</p>
+            <input 
+             type="text" name='fname' 
+             placeholder='Enter first name' 
+             onChange={sendData}
+             value={fullName.fname}
+             required />       
+            <input 
+             type="text" name= 'lname' 
+             placeholder='Enter last name'
+             onChange={sendData} 
+             value={fullName.lname} 
+             required />
+             <input 
+             type="email" name= 'email' 
+             placeholder='Enter your email'
+             onChange={sendData} 
+             value={fullName.email} 
+             required />
+             <input 
+             type="number" name= 'phone' 
+             placeholder='Enter your phone'
+             onChange={sendData} 
+             value={fullName.phone} 
+             required /> 
+             <input 
+             type="text" name= 'qua' 
+             placeholder='Enter your qualification'
+             onChange={sendData} 
+             value={fullName.qua} 
+             required />       
             <button style={{ backgroundColor: 'blue', color: 'white', padding: '10px 25px', margin: 'auto' }} >Click me 🤝</button>
           </form>
         </div>
