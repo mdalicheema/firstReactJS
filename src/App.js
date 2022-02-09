@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
+import ToDoListInc from './ToDoListInc';
 
 
+const App = () => {
+  return(
+    <>
+      <h1>ToDoListInc</h1>
+      <ToDoListInc />
+    </>
+  );
+
+}
 
 
 //spread operators or three dots (...) for arrays and objects
@@ -39,17 +49,18 @@ import React, { useState } from 'react';
 // }
 
 
-//complex form vs Login page
-const App = () => {
+//complex form vs Login page / spread operators or three dots
+
+// const App = () => {
   
-  const [fullName, setName] = useState({
-    fname: "",
-    lname: "",
-    email: "",
-    phone: "",
-  });
+//   const [fullName, setName] = useState({
+//     fname: "",
+//     lname: "",
+//     email: "",
+//     phone: "",
+//   });
   
-  const sendData = (event) => {
+  // const sendData = (event) => {
     // console.log(event.target.value);
     // console.log(event.target.name);
     // console.log(event.target.placeholder);
@@ -57,14 +68,14 @@ const App = () => {
     // const value = event.target.value;
     // const name = event.target.name;
 
-     const {name, value} = event.target;
+    //  const {name, value} = event.target;
 
-    setName((preValue) => {
-      // console.log(preValue);
-      return {
-        ...preValue,
-        [name] : value,
-      };
+    // setName((preValue) => {
+    //   // console.log(preValue);
+    //   return {
+    //     ...preValue,
+    //     [name] : value,
+    //   };
       // if(name === 'fName'){
       //   return {
       //     fname: value,
@@ -94,60 +105,60 @@ const App = () => {
       //     phone: value,
       //   }
       // }
-    });
+    // });
 
-  }
+  // }
   
-  const setData = (event) => {
-    // console.log(event.target.value);
-    event.preventDefault();
-    alert('form submited');
-  }
+//   const setData = (event) => {
+//     // console.log(event.target.value);
+//     event.preventDefault();
+//     alert('form submited');
+//   }
   
-  return (
-    <>
-        <div>
-          <form onSubmit={setData}>
-            <h1>Hello, {fullName.fname} {fullName.lname} </h1>
-            <h3>{fullName.email}</h3>
-            <p>{fullName.phone}</p>
-            <p>{fullName.qua}</p>
-            <input 
-             type="text" name='fname' 
-             placeholder='Enter first name' 
-             onChange={sendData}
-             value={fullName.fname}
-             required />       
-            <input 
-             type="text" name= 'lname' 
-             placeholder='Enter last name'
-             onChange={sendData} 
-             value={fullName.lname} 
-             required />
-             <input 
-             type="email" name= 'email' 
-             placeholder='Enter your email'
-             onChange={sendData} 
-             value={fullName.email} 
-             required />
-             <input 
-             type="number" name= 'phone' 
-             placeholder='Enter your phone'
-             onChange={sendData} 
-             value={fullName.phone} 
-             required /> 
-             <input 
-             type="text" name= 'qua' 
-             placeholder='Enter your qualification'
-             onChange={sendData} 
-             value={fullName.qua} 
-             required />       
-            <button style={{ backgroundColor: 'blue', color: 'white', padding: '10px 25px', margin: 'auto' }} >Click me 🤝</button>
-          </form>
-        </div>
-    </>
-  );
-}
+//   return (
+//     <>
+//         <div>
+//           <form onSubmit={setData}>
+//             <h1>Hello, {fullName.fname} {fullName.lname} </h1>
+//             <h3>{fullName.email}</h3>
+//             <p>{fullName.phone}</p>
+//             <p>{fullName.qua}</p>
+//             <input 
+//              type="text" name='fname' 
+//              placeholder='Enter first name' 
+//              onChange={sendData}
+//              value={fullName.fname}
+//              required />       
+//             <input 
+//              type="text" name= 'lname' 
+//              placeholder='Enter last name'
+//              onChange={sendData} 
+//              value={fullName.lname} 
+//              required />
+//              <input 
+//              type="email" name= 'email' 
+//              placeholder='Enter your email'
+//              onChange={sendData} 
+//              value={fullName.email} 
+//              required />
+//              <input 
+//              type="number" name= 'phone' 
+//              placeholder='Enter your phone'
+//              onChange={sendData} 
+//              value={fullName.phone} 
+//              required /> 
+//              <input 
+//              type="text" name= 'qua' 
+//              placeholder='Enter your qualification'
+//              onChange={sendData} 
+//              value={fullName.qua} 
+//              required />       
+//             <button style={{ backgroundColor: 'blue', color: 'white', padding: '10px 25px', margin: 'auto' }} >Click me 🤝</button>
+//           </form>
+//         </div>
+//     </>
+//   );
+// }
 
 
 
