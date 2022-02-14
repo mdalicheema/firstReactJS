@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import ToDoListInc from './ToDoListInc';
+import ToDoList from './ToDoList';
+import Accordion from './components/accordion/accordian';
 
 
 const App = () => {
   return(
     <>
       <h1>ToDoListInc</h1>
-      <ToDoListInc />
+      <Accordion />
     </>
   );
 
