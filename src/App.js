@@ -1,19 +1,65 @@
-import React, { useState } from 'react';
-import ToDoListInc from './ToDoListInc';
-import ToDoList from './ToDoList';
-import Accordion from './components/accordion/accordian';
+import React, { createContext, useEffect, useState } from 'react';
+import Statewise from './stateWiseData/statewise';
+
+// import ToDoListInc from './ToDoListInc';
+// import ToDoList from './ToDoList';
+// import Accordion from './components/accordion/accordian';
+// import Header from './Header';
+// import Footer from './Footer';
+// import CompA from './components/context/CompA';
 
 
 const App = () => {
-  return(
-    <>
-      <h1>ToDoListInc</h1>
-      <Accordion />
-    </>
-  );
-
+  return <Statewise />
 }
 
+//use of useEffect 
+// const App = () => {
+//   const [num, setNum] = useState(0);
+//   const [nums, setNumS] = useState(0);
+
+//   useEffect(() => {
+//     //alert('you clicked me')
+//     document.title = `you clicked me ${num} times`;
+//   }, [num]);
+
+//   return (
+//     <div>
+//       <button onClick={() => {
+//         setNum(num + 1);
+//       }}>Numb is {num}</button>
+//       <br />
+//       <button onClick={() => {
+//         setNumS(nums + 1);
+//       }}>Numb is {nums}</button>
+//     </div>
+//   );
+
+// }
+
+// createContext vs useContext (Providers Consumers)
+// const FirstName = createContext();
+// const LastName = createContext();
+
+// const App = () => {
+//   return (
+//     <>
+//       <FirstName.Provider value={'Muhammad'}>
+//         <LastName.Provider value={'Ali'}>
+//           <CompA />
+//         </LastName.Provider>
+//       </FirstName.Provider>
+
+//       {/* <Header />
+//       <h1>ToDoListInc</h1>
+//       <Accordion />
+//       <Footer /> */}
+//     </>
+//   );
+
+// }
+
+// export { FirstName, LastName };
 
 //spread operators or three dots (...) for arrays and objects
 // const App  = () => {
@@ -23,18 +69,18 @@ const App = () => {
 //   const biodata = [1, ...fullName, 26, 'male'];
 //   console.log(fullName);
 //   console.log(biodata);
-  
+
 //   const shootinggames = ['try to shoot', 'they are going to dead'];
 //   const flygames = ['how to fly', 'bloons have gone through the sky'];
 //   const games = [...shootinggames, ...flygames];
 //   console.log(games);
-  
+
 //   // objects
 //   const battle = {
 //     name: 'zarb-e-azab',
 //     location: 'nothern areas'
 //   };
-  
+
 //   const country = {
 //     count: 'pak',
 //     ...battle,
@@ -54,69 +100,69 @@ const App = () => {
 //complex form vs Login page / spread operators or three dots
 
 // const App = () => {
-  
+
 //   const [fullName, setName] = useState({
 //     fname: "",
 //     lname: "",
 //     email: "",
 //     phone: "",
 //   });
-  
-  // const sendData = (event) => {
-    // console.log(event.target.value);
-    // console.log(event.target.name);
-    // console.log(event.target.placeholder);
 
-    // const value = event.target.value;
-    // const name = event.target.name;
+// const sendData = (event) => {
+// console.log(event.target.value);
+// console.log(event.target.name);
+// console.log(event.target.placeholder);
 
-    //  const {name, value} = event.target;
+// const value = event.target.value;
+// const name = event.target.name;
 
-    // setName((preValue) => {
-    //   // console.log(preValue);
-    //   return {
-    //     ...preValue,
-    //     [name] : value,
-    //   };
-      // if(name === 'fName'){
-      //   return {
-      //     fname: value,
-      //     lname: preValue.lname,
-      //     email: preValue.email,
-      //     phone: preValue.phone,
-      //   };
-      // }else if(name === 'lName'){
-      //   return{
-      //     fname: preValue.fname,
-      //     lname: value,
-      //     email: preValue.email,
-      //     phone: preValue.phone,
-      //   }
-      // }else if(name === 'eMail'){
-      //   return{
-      //     fname: preValue.fname,
-      //     lname: preValue.lname,
-      //     email: value,
-      //     phone: preValue.phone,
-      //   }
-      // }else{
-      //   return{
-      //     fname: preValue.fname,
-      //     lname: preValue.lname,
-      //     email: preValue.email,
-      //     phone: value,
-      //   }
-      // }
-    // });
+//  const {name, value} = event.target;
 
-  // }
-  
+// setName((preValue) => {
+//   // console.log(preValue);
+//   return {
+//     ...preValue,
+//     [name] : value,
+//   };
+// if(name === 'fName'){
+//   return {
+//     fname: value,
+//     lname: preValue.lname,
+//     email: preValue.email,
+//     phone: preValue.phone,
+//   };
+// }else if(name === 'lName'){
+//   return{
+//     fname: preValue.fname,
+//     lname: value,
+//     email: preValue.email,
+//     phone: preValue.phone,
+//   }
+// }else if(name === 'eMail'){
+//   return{
+//     fname: preValue.fname,
+//     lname: preValue.lname,
+//     email: value,
+//     phone: preValue.phone,
+//   }
+// }else{
+//   return{
+//     fname: preValue.fname,
+//     lname: preValue.lname,
+//     email: preValue.email,
+//     phone: value,
+//   }
+// }
+// });
+
+// }
+
 //   const setData = (event) => {
 //     // console.log(event.target.value);
 //     event.preventDefault();
 //     alert('form submited');
 //   }
-  
+
 //   return (
 //     <>
 //         <div>
@@ -166,13 +212,13 @@ const App = () => {
 
 //simple submit forms
 // const App = () => {
-  
+
 //   const [namefirst, setName] = useState('');
 
 //   const [namelast, setNameLast] = useState('');
-  
+
 //   const [firstName, setFirstName] = useState();
-  
+
 //   const [lastName, setLastName] = useState();
 
 //   const sendData = (event) => {
@@ -184,14 +230,14 @@ const App = () => {
 //     // console.log(event.target.value);
 //     setNameLast(event.target.value);
 //   }
-  
+
 //   const setData = (event) => {
 //     console.log(event.target.value);
 //     event.preventDefault();
 //     setFirstName(namefirst);
 //     setLastName(namelast);
 //   }
-  
+
 //   return (
 //     <>
 //         <div>
@@ -241,7 +287,7 @@ const App = () => {
 //Set Time live
 // const App = () => {
 //   let time = new Date().toLocaleTimeString();
-  
+
 //   const [ctime, setCTime] = useState(time);
 
 //   const UpdateTime = () => {

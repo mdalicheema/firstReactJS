@@ -19,4 +19,4 @@ const MyAccordion = ({question, answer}) => {
   );
 }
 
-export default MyAccordion
+export default MyAccordion;
