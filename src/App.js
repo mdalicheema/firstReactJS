@@ -1,5 +1,12 @@
 import React, { createContext, useEffect, useState } from 'react';
-import Statewise from './stateWiseData/statewise';
+import { Route, Routes } from 'react-router-dom';
+import Home from "./Home";
+import About from './About';
+import Contact from './Contact';
+import Error from './Error';
+
+// import Statewise from './stateWiseData/statewise';
+import Pokemon from './components/pokemon';
 
 // import ToDoListInc from './ToDoListInc';
 // import ToDoList from './ToDoList';
@@ -8,10 +15,33 @@ import Statewise from './stateWiseData/statewise';
 // import Footer from './Footer';
 // import CompA from './components/context/CompA';
 
+// const App = () => {
+
+//   const Name = () => {
+//     return <h1>This is Name page.</h1>
+//   }
+
+//   return (
+//     <>
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/home" element={<Home />} />
+//         <Route path="about" element={<About />} />
+//         <Route path="about/name" element={<Name />} />
+//         <Route path="contact" element={<Contact />} />
+//         <Route path="*" element={<Error />} />
+//       </Routes>
+//     </>
+//   );
+// }
 
 const App = () => {
-  return <Statewise />
+  return <Pokemon />
 }
+
+// const App = () => {
+//   return <Statewise />
+// }
 
 //use of useEffect 
 // const App = () => {
